@@ -1,0 +1,13 @@
+*.log
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+.idea
+.DS_Store
+dist/
+node_modules/
+npm-debug.log

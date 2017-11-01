@@ -7,11 +7,11 @@ function Circle(opts) {
 
 
     // Shape
-    this.radius = this.sheetWidth / opts.radius;
+    this.radius = this.sheetHeight / (100 / opts.radius);
     this.pointsLength = opts.pointsLength;
     this.position = {
-        x : opts.posX,
-        y : opts.posY
+        x : this.sheetWidth / (100 / opts.posX),
+        y : this.sheetHeight / (100 /opts.posY)
     };
 
 
@@ -24,28 +24,32 @@ function Circle(opts) {
 
 }
 
+
 Circle.prototype.init = function() {
 
     Math.radians = function(degrees) {
         return degrees * Math.PI / 180;
     };
 
-
-    for (var i = 0;  i <= this.pointsLength;  i++) {
+    for (var i = 0; i <= this.pointsLength; i++) {
 
         var position = {};
         var angle = (360 / this.pointsLength) * i;
 
-        position.x= this.position.x + Math.sin(Math.radians(angle)) * this.radius;
+
+        position.x = this.position.x + Math.sin(Math.radians(angle)) * this.radius;
         position.y = this.position.y + Math.cos(Math.radians(angle)) * this.radius;
+
 
         position.x = (position.x / this.sheetWidth) * 100;
         position.y = (position.y / this.sheetHeight) * 100;
 
         this.pointsPosition.push(position);
-    }
+    };
 
 };
 
 
+
 module.exports = Circle;
+
