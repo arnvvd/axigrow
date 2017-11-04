@@ -14,6 +14,7 @@
   "author": "Julien Espagnon & Arnaud Pinot",
   "license": "ISC",
   "dependencies": {
-    "ajax-request": "^1.2.3"
+    "ajax-request": "^1.2.3",
+    "firebase-admin": "^5.4.3"
   }
 }
