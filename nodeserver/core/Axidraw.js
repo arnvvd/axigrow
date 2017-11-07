@@ -27,7 +27,7 @@ Axidraw.prototype.init = function()  {
         if (res != undefined && res.statusCode === 200) {
             this.readyEvent.emit('isReady', true);
         } else {
-            console.log("Can't access to Axidraw")
+            console.log('\x1b[31m', "Can't access to Axidraw")
             this.readyEvent.emit('isReady', false);
         }
 

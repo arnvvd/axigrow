@@ -8,6 +8,10 @@ const Circle = require('../shapes/Circle.js');
 
 function Controller(opts) {
 
+    // General Config
+    this.databaseIsReady = false;
+    this.axidrawIsReady = false;
+
 	// Axidraw Config
 	this.axidrawIP = opts.axidrawIP
     this.SHEET_RATIO = (210 / 297); // A4
@@ -20,8 +24,6 @@ Controller.prototype.init = function()  {
 
     this.setDataBase();
     this.setAxidraw();
-    //this.axidraw.drawShape(this.shape.pointsPosition);
-
 }
 
 
@@ -30,6 +32,19 @@ Controller.prototype.setDataBase = function() {
 	// Database
 	this.database = new Database();
 
+    // Check Database Status
+    this.database.readyEvent.on('isReady', (isReady) => {
+
+        if (isReady) {
+            console.log('\x1b[32m', 'Database is ready')
+            this.databaseIsReady = true;
+            // Listen shapes list
+            this.listenShapes();
+        } else {
+            console.log('\x1b[31m', 'Please verify connection with Database and relaunch the node server')
+        }
+
+    });
 }
 
 
@@ -44,17 +59,32 @@ Controller.prototype.setAxidraw = function() {
     this.axidraw.readyEvent.on('isReady', (isReady) => {
 
         if (isReady) {
-            console.log('Axidraw is ready')
+            this.axidrawIsReady = true;
+            console.log('\x1b[32m', 'Axidraw is ready')
+
+            // TODO : Set axidraw ready in database to active drawing action in client
         } else {
-            console.log('Please verify connection with Axidraw and relaunch the node server')
+            console.log('\x1b[31m', 'Please verify connection with Axidraw and relaunch the node server')
         }
 
     });
-
 }
 
 
-Controller.prototype.setShape = function(){
+
+// DATAS
+Controller.prototype.listenShapes = function() {
+
+    this.database.shapes.on("child_changed", (snapshot) => {
+       console.log(snapshot.val());
+    }, function (error) {
+       console.log('\x1b[31m', 'Error: ' + error.code);
+    });
+}
+
+
+// SHAPES
+Controller.prototype.setShape = function() {
 
     this.shape = new Circle({
         sheetRatio: this.SHEET_RATIO,
