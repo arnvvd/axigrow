@@ -1,0 +1,25 @@
+///* # Font-face */
+//// NB: there's no need to call TTF, EOT, nor SVG fonts.
+//// cf. https://twitter.com/kReEsTaL/status/6445182925819125
+
+
+/*****************/
+/****** Default *****/
+/*****************/
+
+@font-face {
+  font-family: 'BebasWebRegular';
+  src: url('../assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+  url('../assets/fonts/bebasneue_regular-webfont.woff') format('woff');
+/*  url('../assets/fonts/bebasneue_regular-webfont.svg') format('svg'),
+  url('../assets/fonts/bebasneue_regular-webfont.ttf') format('ttf'),
+  url('../assets/fonts/bebasneue_regular-webfont.eot') format('eot');*/
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*****************/
+/****** Google Font Import *****/
+/*****************/
+
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans');

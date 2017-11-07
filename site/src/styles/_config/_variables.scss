@@ -1,0 +1,30 @@
+/*******************/
+/* # Media Queries */
+/*******************/
+
+/* https://github.com/sass-mq/sass-mq */
+
+$mq-breakpoints: (
+	mobile: 640px,
+	tablet: 768px,
+	desktop: 1024px,
+	wide: 1366px,
+	xlarge: 1440px
+);
+
+
+
+/****************/
+/* # Variables */
+/****************/
+
+// Fonts
+$font: sans-serif !default;
+$font-regular: 'BebasWebRegular', sans-serif;
+
+// Colors
+$black: #000;
+$grey: #EAEAEA;
+$white: #fff;
+
+$body-text: #212121;

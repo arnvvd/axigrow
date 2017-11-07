@@ -1,0 +1,114 @@
+/****************/
+/* # Form Reset from RM */
+/****************/
+
+@at-root 
+{
+
+	/****************/
+	/* # Generic styles*/
+
+	::-webkit-input-placeholder { /* Chrome */
+		color: $grey;
+		transition: all 0.3s ease;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+		color: $grey;
+		transition: all 0.3s ease;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+		color: $grey;
+		transition: all 0.3s ease;
+		opacity: 1;
+	}
+	:-moz-placeholder { /* Firefox 4 - 18 */
+		color: $grey;
+		transition: all 0.3s ease;
+		opacity: 1;
+	}
+
+	:focus::-webkit-input-placeholder { /* Chrome */
+		color: transparent;
+	}
+	:focus:-ms-input-placeholder { /* IE 10+ */
+		color: transparent;
+	}
+	:focus::-moz-placeholder { /* Firefox 19+ */
+		color: transparent;
+	}
+	:focus:-moz-placeholder { /* Firefox 4 - 18 */
+		color: transparent;
+	}
+
+	input,
+	textarea,
+	button,
+	select{
+		
+		// IE10 needs this
+		line-height: normal;
+		//
+
+		border-radius: none;
+		border: 1px solid;
+
+		&:focus,
+		&:focus {
+			outline:0;
+		}
+	}
+	
+	input,
+	textarea {
+		// Webkit autofill background-color
+		&:-webkit-autofill {
+			-webkit-box-shadow: 0 0 0px 1000px white inset;
+			-webkit-text-fill-color: $grey;
+		}
+	}
+
+
+	/****************/
+	/* # Inputs */
+
+	input {
+		// Delete IE auto-clear cross
+		&::-ms-clear {
+			display: none;
+		}
+
+		// IE9 line-height fix
+		.ie9 & {
+			line-height: normal !important;
+		}
+
+		// Exceptions
+		&[type="radio"],
+		&[type="checkbox"] {
+			padding: 0 !important; // we'll never use padding on these two
+		}
+		
+		&[type="radio"],
+		&[type="checkbox"],
+		&[type="submit"] {
+			width: auto;
+			height: auto;
+			min-height: 0;
+		}
+	}
+
+
+	/****************/
+	/* # Selects*/
+
+	select {
+		line-height: normal;
+
+		// IE 10
+		&::-ms-expand {
+			display: none;
+		}
+		//
+	}
+
+}

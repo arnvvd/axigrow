@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+# Ignore some folders
+dist
+src/js/vendor
+
+# Ignore config stuff
+server.*.js
+*config.js
+serviceworker.js

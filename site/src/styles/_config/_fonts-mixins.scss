@@ -1,0 +1,23 @@
+/************************/
+/****** Font Mixins *****/
+/************************/
+
+/* Principle mixin to use */
+
+@mixin font-style ($font: $font-regular, $font-size: 1.4rem, $weight : 400, $style: normal, $line-height : 2rem){
+  font-family: $font;
+  font-style: $style;
+  font-size: $font-size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+//@include font-style ($font: $font-regular, $font-size: 1.4rem, $weight : 400, $style: normal, $line-height : 2rem);
+
+
+
+/********************************/
+/****** Cutoms Fonts Mixins *****/
+/********************************/
+
+/* Add mixins here for font-style--alpha / --beta ... */

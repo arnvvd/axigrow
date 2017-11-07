@@ -1,0 +1,18 @@
+/****************************/
+/****** Usefull Clases ******/
+/****************************/
+
+// Text to uppercase
+.uppercase{
+	text-transform:uppercase;
+}
+
+// Hide only for viewer not for bot
+.hide_for_viewer{
+	@include hide-for-viewer;
+}
+
+// No scroll
+.no_scroll{
+  overflow: hidden;
+}

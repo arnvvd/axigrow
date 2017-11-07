@@ -1,0 +1,63 @@
+/****************/
+/* # Base from RM */
+/****************/
+
+* {
+  -webkit-box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+		  box-sizing: border-box;
+}
+
+html {
+	// To use REM unit
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	//Default
+	@include font-style();
+	color: $body-text;
+}
+
+
+*, *::before, *::after {
+	background-repeat: no-repeat;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	margin:0;
+}
+
+
+svg,img {
+	width: 100%;
+	max-width:100%;
+}
+
+
+ul {
+	margin:0;
+	padding:0;
+}
+
+
+li {
+	list-style: none
+}
+
+
+a {
+	text-decoration:none;
+	color: inherit;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+blockquote {
+	padding:0;
+	margin:0;
+}
