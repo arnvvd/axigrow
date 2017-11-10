@@ -1,4 +1,4 @@
-module.exports = `
+<template>
     <nav class="nav">
         <ul>
             <li>
@@ -7,4 +7,4 @@ module.exports = `
             </li>
         </ul>
     </nav>
-`;
+</template>

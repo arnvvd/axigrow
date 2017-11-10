@@ -1,8 +1,11 @@
+<template>
+    <button v-on:click="counterIncrement">Increment {{getCountIncrement}}</button>
+</template>
+
 <script>
     import { mapGetters, mapActions } from 'vuex'
 
     export default {
-        template: require('./template.html'),
         methods: {
             ...mapActions([
                 'counterIncrement'
