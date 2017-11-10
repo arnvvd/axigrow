@@ -1,7 +1,7 @@
 # Vue2-starterkit
 
 Vue.js 2 + Vuex + Vue Router = &#128175;
- 
+
 ## Development
 
 ### Install Dependencies
@@ -9,11 +9,6 @@ Vue.js 2 + Vuex + Vue Router = &#128175;
 With **NPM**
 ``` bash
 npm install
-```
-
-or with **YARN**
-``` bash
-yarn install
 ```
 
 ### Run Server on localhost:8080

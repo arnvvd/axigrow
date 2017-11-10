@@ -8,6 +8,9 @@
         components: {
             'btn-increment': BtnIncrement,
             'navigation': Navigation
+        },
+        created() {
+            this.$store.dispatch('getFirebaseDatabase');
         }
     }
 </script>

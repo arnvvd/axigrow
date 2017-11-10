@@ -8,11 +8,11 @@
 }
 
 // Hide only for viewer not for bot
-.hide_for_viewer{
+.hide-for-viewer{
 	@include hide-for-viewer;
 }
 
 // No scroll
-.no_scroll{
+.no-scroll{
   overflow: hidden;
 }
