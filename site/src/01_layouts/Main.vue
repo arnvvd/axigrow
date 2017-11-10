@@ -1,10 +1,14 @@
 <template>
     <main class="main">
-        <navigation></navigation>
-        <btn-increment></btn-increment>
-        <transition name="transition-page">
-            <router-view></router-view>
-        </transition>
+        <!--<navigation></navigation>
+        <btn-increment></btn-increment>-->
+        <div class="container">
+            <div class="container__inner">
+                <transition name="transition-page">
+                    <router-view></router-view>
+                </transition>
+            </div>
+        </div>
     </main>
 </template>
 

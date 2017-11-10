@@ -8,12 +8,33 @@
 /*****************/
 
 @font-face {
-  font-family: 'BebasWebRegular';
-  src: url('../assets/fonts/bebasneue_regular-webfont.woff2') format('woff2'),
-  url('../assets/fonts/bebasneue_regular-webfont.woff') format('woff');
-/*  url('../assets/fonts/bebasneue_regular-webfont.svg') format('svg'),
-  url('../assets/fonts/bebasneue_regular-webfont.ttf') format('ttf'),
-  url('../assets/fonts/bebasneue_regular-webfont.eot') format('eot');*/
+  font-family: 'PoppinsRegular';
+  src: url('../assets/fonts/Poppins-Regular.woff2') format('woff2'),
+  url('../assets/fonts/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsSemibold';
+  src: url('../assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
+  url('../assets/fonts/Poppins-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url('../assets/fonts/Poppins-Bold.woff2') format('woff2'),
+  url('../assets/fonts/Poppins-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PoppinsBlack';
+  src: url('../assets/fonts/Poppins-Black.woff2') format('woff2'),
+  url('../assets/fonts/Poppins-Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

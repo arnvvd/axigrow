@@ -20,11 +20,14 @@ $mq-breakpoints: (
 
 // Fonts
 $font: sans-serif !default;
-$font-regular: 'BebasWebRegular', sans-serif;
+$font-regular: 'PoppinsRegular', sans-serif;
+$font-semibold: 'PoppinsSemibold', sans-serif;
+$font-bold: 'PoppinsBold', sans-serif;
+$font-black: 'PoppinsBlack', sans-serif;
 
 // Colors
 $black: #000;
-$grey: #EAEAEA;
+$grey: #8E8E8E;
 $white: #fff;
 
 $body-text: #212121;

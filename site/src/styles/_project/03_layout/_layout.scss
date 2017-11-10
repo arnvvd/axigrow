@@ -1,0 +1,14 @@
+.container {
+	display: table;
+	width: 100%;
+	max-width: 96rem;
+	min-height: 100vh;
+	margin: 0 auto;
+
+	&__inner {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 20rem 0 10rem ;
+		background: red;
+	}
+}
