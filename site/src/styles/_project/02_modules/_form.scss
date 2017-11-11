@@ -2,7 +2,45 @@
 /****** Forms ******/
 /*******************/
 
-.form{
 
+.generator__form {
+	width: 100%;
+}
 
+.input {
+
+	&--name{
+		margin-bottom: 6rem;
+		font-family: $font-bold;
+		font-size: 8rem;
+		border: none;
+		text-align: center;
+
+		&::placeholder {
+			color: $black;
+			opacity: 0.1;
+		}
+	}
+
+	&--submit {
+		font-family: $font-regular;
+		font-size: 2rem;
+		padding: 20px;
+		border-radius: 50px;
+
+		&-01 {
+			margin-right: 2rem;
+		}
+
+		&-02 {
+			color: $white;
+			background: $black;
+		}
+	}
+}
+
+.submit__buttons {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }

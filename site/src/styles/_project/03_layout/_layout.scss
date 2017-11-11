@@ -9,6 +9,11 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 20rem 0 10rem ;
-		background: red;
 	}
+}
+
+.letter__container {
+	display: inline-block;
+	width: 33%;
+	text-align:center;
 }
