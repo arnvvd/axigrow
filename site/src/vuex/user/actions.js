@@ -9,10 +9,9 @@ const actionsList = {
 
     createUser: (store, user) => {
 
-        console.log(user);
-
         // Check if user already Exist
         database.users.orderByChild("id").equalTo(user.id).once("value", function(snapshot) {
+
             const userData = snapshot.val();
 
             if (!userData) {
@@ -24,8 +23,8 @@ const actionsList = {
 
                 // Push User in Database
                 updateUserToDatabase(firebasePath, user);
-            } else {
 
+            } else {
                 // Get User
                 snapshot.forEach((item) => {
 
@@ -44,12 +43,13 @@ const actionsList = {
             }
         });
 
+
         // Do Commits
         store.commit(types.SET_OLD_USER);
         store.commit(types.SET_CURRENT_USER, user);
 
 
-        // Add user to firebase
+        // Update user to firebase
         function updateUserToDatabase(firebasePath, user) {
             database.users.child(firebasePath).update(user, (error) => {
                 if (error) {
@@ -58,9 +58,8 @@ const actionsList = {
                     console.log('user saved!');
                 }
             });
-        } 
+        }
     }
-
 };
 
 export default actionsList;

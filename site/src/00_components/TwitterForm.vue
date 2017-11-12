@@ -35,18 +35,22 @@
                     .then( (response) => {
                         let twitterProfile = response.data[0];
 
-                        let user = {};
+                        let profile = {};
 
-                        user.id = twitterProfile.id;
-                        user.pseudonyme = twitterProfile.screen_name;
-                        user.name = twitterProfile.name;
-                        user.followers = twitterProfile.followers_count;
-                        user.following = twitterProfile.friends_count;
-                        user.likes = twitterProfile.favourites_count;
-                        user.location = twitterProfile.location;
-                        user.account_created_at = twitterProfile.created_at;
+                        profile.id = twitterProfile.id;
+                        profile.pseudonyme = twitterProfile.screen_name;
+                        profile.name = twitterProfile.name;
+                        profile.followers = twitterProfile.followers_count;
+                        profile.following = twitterProfile.friends_count;
+                        profile.likes = twitterProfile.favourites_count;
+                        profile.location = twitterProfile.location;
+                        profile.account_created_at = twitterProfile.created_at;
 
-                        this.storeUser(user);
+
+                        // Create User
+                        this.createUser(profile);
+                        // Create Shape
+                        this.createShape(profile);
                     })
                     .catch( (error) => {
                         this.error = true;
@@ -54,8 +58,23 @@
                     });
             },
 
-            storeUser(user) {
+
+
+            createUser(user) {
                 this.$store.dispatch('createUser', user);
+            },
+
+            createShape(user) {
+
+                let shape = {};
+
+                shape.followers = user.followers;
+                shape.following = user.following;
+                shape.likes = user.likes;
+                shape.userID = user.id;
+                shape.author = user.pseudonyme;
+
+                this.$store.dispatch('createShape', shape);
             },
 
 			resetAllTimeProperties () {
