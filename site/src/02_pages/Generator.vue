@@ -12,9 +12,6 @@
     export default {
         components: {
             'twitter-form': TwitterForm,
-        },
-        created() {
-            this.$store.dispatch('getFirebaseDatabase');
         }
     }
 </script>

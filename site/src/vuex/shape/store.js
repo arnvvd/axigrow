@@ -10,18 +10,25 @@ import actionList from './actions';
 
 /* State */
 const state = {
-    lastShape: {},
-    currentShape: {}
+    areFetched: false,
+    shapes: []
 };
 
 
 /* Mutations */
 // Functions to mute our state
 const mutations = {
-    // we can use the ES2015 computed property name feature
-    // to use a constant as the function name
-    [ types.SET_OLD_USER ] (state) {
-        state.oldUser = state.currentUser;
+
+    [ types.SHAPES_ARE_FETCHED ] (state) {
+        state.areFetched = true;
+    },
+
+    [ types.SET_ALL_SHAPES ] (state, shapesArr) {
+        state.shapes = shapesArr;
+    },
+
+    [ types.ADD_NEW_SHAPE ] (state, shape) {
+        state.shapes.push(shape);
     }
 };
 
