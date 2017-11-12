@@ -17,22 +17,41 @@ const actionsList = {
 
             if (!userData) {
                 console.log('User does not Exist');
-                // Add User to firebase
-                addUserToDatabase(user);
+
+                // Get Path to update User
+                let firebasePath = database.users.push().key;
+                user.firebase_path = firebasePath;
+
+                // Push User in Database
+                updateUserToDatabase(firebasePath, user);
+            } else {
+
+                // Get User
+                snapshot.forEach((item) => {
+
+                    console.log('User already Exist : update');
+
+                    let userData = item.val();
+
+                    // Update datas
+                    userData.followers = user.followers;
+                    userData.following = user.following;
+                    userData.likes = user.likes;
+
+                    // Push User in Database           
+                    updateUserToDatabase(item.key, userData);
+                });
             }
         });
 
-        console.log(types);
-
         // Do Commits
         store.commit(types.SET_OLD_USER);
-        console.log('coucou');
         store.commit(types.SET_CURRENT_USER, user);
 
 
         // Add user to firebase
-        function addUserToDatabase(user) {
-            database.users.push(user, (error) => {
+        function updateUserToDatabase(firebasePath, user) {
+            database.users.child(firebasePath).update(user, (error) => {
                 if (error) {
                     console.log('cannot save user');
                 } else {

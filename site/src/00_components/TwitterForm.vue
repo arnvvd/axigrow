@@ -31,21 +31,11 @@
 
             getTwitterProfile() {
 
-                // Prepare User Model
-                let user = {
-                    id: 0,
-                    pseudonyme: '',
-                    name: '',
-                    followers: 0,
-                    following: 0,
-                    likes: 0,
-                    location: '',
-                    account_created_at: ''
-                };
-
                 axios.get(`http://localhost:3000/api/twitter/${this.username}`)
                     .then( (response) => {
                         let twitterProfile = response.data[0];
+
+                        let user = {};
 
                         user.id = twitterProfile.id;
                         user.pseudonyme = twitterProfile.screen_name;

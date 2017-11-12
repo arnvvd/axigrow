@@ -10,28 +10,8 @@ import actionList from './actions';
 
 /* State */
 const state = {
-    oldUser: {
-        id: null,
-        firebase_path: '',
-        pseudonyme: '',
-        name: '',
-        followers: 0,
-        following: 0,
-        likes: 0,
-        location: '',
-        account_created_at: ''
-    },
-    currentUser: {
-        id: null,
-        firebase_path: '',
-        pseudonyme: '',
-        name: '',
-        followers: 0,
-        following: 0,
-        likes: 0,
-        location: '',
-        account_created_at: ''
-    }
+    lastShape: {},
+    currentShape: {}
 };
 
 
@@ -42,10 +22,6 @@ const mutations = {
     // to use a constant as the function name
     [ types.SET_OLD_USER ] (state) {
         state.oldUser = state.currentUser;
-    },
-
-    [ types.SET_CURRENT_USER ] (state, user) {
-        state.currentUser = user;
     }
 };
 
