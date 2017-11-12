@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 import firebase from 'firebase';
 
 // Imports Configs
