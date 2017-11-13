@@ -1,7 +1,9 @@
 <template>
-	<form @submit.prevent="onSubmit">
+	<div>
 		<input type="text" placeholder="Ton pseudo" v-model="username">
-	</form>
+        <button @click="onSubmit(0)" class="button">Generate shape</button>
+        <button @click="onSubmit(1)" class="button">Print shape</button>
+	</div>
 </template>
 
 <script>
@@ -19,17 +21,17 @@
     	},
 
         methods: {
-            onSubmit (e) {
+            onSubmit (type, e) {
             	// Validation
 		        if (!this.username.match(/\w{1,}\s{0,}/)) {
 	          		this.error = true
 		        } else {
 	          		this.error = false
-                    this.getTwitterProfile();
+                    this.getTwitterProfile(type);
 		        }
             },
 
-            getTwitterProfile() {
+            getTwitterProfile(type) {
 
                 axios.get(`http://localhost:3000/api/twitter/${this.username}`)
                     .then( (response) => {
@@ -50,7 +52,7 @@
                         // Create User
                         this.createUser(profile);
                         // Create Shape
-                        this.createShape(profile);
+                        this.createShape(profile, type);
                     })
                     .catch( (error) => {
                         this.error = true;
@@ -64,7 +66,7 @@
                 this.$store.dispatch('createUser', user);
             },
 
-            createShape(user) {
+            createShape(user, type) {
 
                 let shape = {};
 
@@ -73,6 +75,13 @@
                 shape.likes = user.likes;
                 shape.userID = user.id;
                 shape.author = user.pseudonyme;
+                shape.isDraw = false;
+
+                if (type === 0) {
+                    shape.toDraw = false;
+                } else {
+                    shape.toDraw = true;
+                }
 
                 this.$store.dispatch('createShape', shape);
             },

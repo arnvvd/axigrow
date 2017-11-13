@@ -1,9 +1,9 @@
 <template>
     <div style="margin-top: 5rem;">
         <h1>Dashboard</h1>
-        <p>There is {{getShapes.length}} shapes</p>
+        <p>There is {{getShapesToDraw.length}} shapes</p>
         <ul>
-			<li v-for="shape in getShapes">
+			<li v-for="shape in getShapesToDraw">
 				<pre>{{ shape }}</pre>
 			</li>
         </ul>
@@ -16,7 +16,7 @@
     export default {
         computed: {
             ...mapGetters([
-                'getShapes'
+                'getShapesToDraw'
             ])
         }
     }
