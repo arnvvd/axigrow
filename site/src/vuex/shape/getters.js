@@ -1,8 +1,7 @@
 'use strict';
 
 const gettersList = {
-    lastShape: state => state.oldUser,
-    currentShape: state => state.currentShape
+    shapesAreFetched: state => state.areFetched
 };
 
 export default gettersList;

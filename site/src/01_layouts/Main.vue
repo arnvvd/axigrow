@@ -1,10 +1,18 @@
 <template>
     <main class="main">
-        <navigation></navigation>
-        <btn-increment></btn-increment>
+
+        <!-- If Datas are fetched -->
         <transition name="transition-page">
-            <router-view></router-view>
+            <div v-if='!shapesAreFetched'>Loader</div>
         </transition>
+
+        <!-- Else -->
+        <navigation v-if='shapesAreFetched'></navigation>
+        <btn-increment v-if='shapesAreFetched'></btn-increment>
+        <transition name="transition-page">
+            <router-view v-if='shapesAreFetched'></router-view>
+        </transition>
+
     </main>
 </template>
 
@@ -21,7 +29,9 @@
             'navigation': Navigation
         },
         computed: {
-            ...mapGetters([])
+            ...mapGetters([
+                'shapesAreFetched'
+            ])
         },
         created() {
             this.$store.dispatch('getFirebaseDatabase');
