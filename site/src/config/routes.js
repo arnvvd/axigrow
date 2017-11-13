@@ -4,6 +4,7 @@ import Single from '../02_pages/Single.vue';
 import Archive from '../02_pages/Archive.vue';
 import About from '../02_pages/About.vue';
 import Axigrow from '../02_pages/Axigrow.vue';
+import Dashboard from '../02_pages/Dashboard.vue';
 import PageNotFound from '../02_pages/404.vue';
 
 
@@ -14,6 +15,7 @@ const routes = [
     { path: '/shapes/:id', component: Single },
     { path: '/about', component: About },
     { path: '/axigrow', component: Axigrow },
+    { path: '/dashboard', component: Dashboard },
     { path: "*", component: PageNotFound }
 ];
 

@@ -1,5 +1,7 @@
 'use strict';
 
+import shortid from 'shortid';
+
 /* Import Database */
 import { database } from '../../core/database';
 
@@ -12,6 +14,7 @@ const actionsList = {
         // Get Path to update User
         let firebasePath = database.shapes.push().key;
         shape.firebase_path = firebasePath;
+        shape.id = shortid.generate();
 
         // add shape to firebase
         addShapeToDatabase(firebasePath, shape);
