@@ -56,7 +56,8 @@ Controller.prototype.setAxidraw = function() {
 
     // AxiDraw
     this.axidraw = new Axidraw({
-        api: 'http://' + this.axidrawIP + ':4242/v1/pen'
+        api: 'http://' + this.axidrawIP + ':4242/v1/pen',
+        database: this.database
     })
 
     // Check Axidraw Status
@@ -97,13 +98,7 @@ Controller.prototype.drawShape = function(datasShape) {
     // Set Shape
     this.setShape();
     // TODO drawShape
-    // this.axidraw.drawShape(this.shape.pointsPosition);
-    // CODE TO INSERT WHEN AXIDRAW ENDED UP TO DRAW
-    setTimeout(() => {
-        this.database.endShape(datasShape);
-        // Set axidraw status to ready
-        this.database.setAxidrawReady();
-    }, 10000)
+    this.axidraw.drawShape(this.shape.pointsPosition);
 }
 
 
