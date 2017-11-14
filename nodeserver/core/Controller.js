@@ -98,7 +98,7 @@ Controller.prototype.drawShape = function(datasShape) {
     // Set Shape
     this.setShape();
     // TODO drawShape
-    this.axidraw.drawShape(this.shape.pointsPosition);
+    this.axidraw.drawShape(this.shape.pointsPosition, datasShape);
 }
 
 

@@ -145,7 +145,7 @@ Axidraw.prototype.resetPenPos = function(params = false) {
 }
 
 
-Axidraw.prototype.drawShape = function(data) {
+Axidraw.prototype.drawShape = function(data, datasShape) {
     this.setPenPos({
         data: data[0],
         callback: () => {
