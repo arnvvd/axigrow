@@ -21,13 +21,14 @@
     	},
 
         methods: {
-            onSubmit (type, e) {
+            onSubmit(type, e) {
             	// Validation
 		        if (!this.username.match(/\w{1,}\s{0,}/)) {
 	          		this.error = true
 		        } else {
 	          		this.error = false
                     this.getTwitterProfile(type);
+                    this.resetAllTimeProperties();
 		        }
             },
 
@@ -55,6 +56,7 @@
                         this.createShape(profile, type);
                     })
                     .catch( (error) => {
+                        console.log("coucou erreur");
                         this.error = true;
                         console.log(error);
                     });
@@ -85,7 +87,7 @@
                 this.$store.dispatch('createShape', shape);
             },
 
-			resetAllTimeProperties () {
+			resetAllTimeProperties() {
 				this.username = ''
 			}
         }

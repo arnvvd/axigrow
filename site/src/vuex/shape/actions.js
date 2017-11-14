@@ -20,7 +20,7 @@ const actionsList = {
         addShapeToDatabase(firebasePath, shape);
 
         // Store new shape
-        store.commit(types.ADD_NEW_SHAPE, shape);
+        //store.commit(types.ADD_NEW_SHAPE, shape);
 
         // Update user to firebase
         function addShapeToDatabase(firebasePath, shape) {
@@ -80,6 +80,18 @@ const actionsList = {
 
     listenShapes: (store) => {
         console.log('listen shapes');
+
+        let isListeningChildAdded = false;
+
+        database.shapes.limitToLast(1).on("child_added", (snapshot) => {
+            if (isListeningChildAdded) {
+                // Store new shape
+                store.commit(types.ADD_NEW_SHAPE, snapshot.val());
+            } else {
+                isListeningChildAdded = true;
+            }
+        });
+
         database.shapes.on("child_changed", (snapshot) => {
             store.commit(types.UPDATE_SHAPE_STATUS, snapshot.val());
         });
