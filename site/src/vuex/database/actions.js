@@ -16,6 +16,9 @@ const actionsList = {
 
                 // If Connected Get All Shape from Shape Store
                 store.dispatch('getAllShape');
+                // Listen Axidraw Status
+                store.dispatch('setAxidrawStatus');
+                store.dispatch('listenAxidrawStatus');
             }
         });
     }

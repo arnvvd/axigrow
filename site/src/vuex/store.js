@@ -15,6 +15,7 @@ Vue.use(Vuex);
 import databaseStore from './database/store';
 import userStore from './user/store';
 import shapeStore from './shape/store';
+import axidrawStore from './axidraw/store';
 
 /*Debug if Env = production*/
 const debug = process.env.NODE_ENV !== 'production';
@@ -25,7 +26,8 @@ export default new Vuex.Store({
     modules: {
         databaseStore,
         userStore,
-        shapeStore
+        shapeStore,
+        axidrawStore
     },
     strict: debug,
     middlewares: debug

@@ -60,6 +60,28 @@ const actionsList = {
             // Commit Shapes in Store
             store.commit(types.SET_ALL_SHAPES, shapesArr);
             store.commit(types.SHAPES_ARE_FETCHED);
+
+            // Listen Shapes
+            store.dispatch('listenShapes');
+        });
+    },
+
+    drawShape: (store, shape) => {
+        // Update user to firebase
+        database.shapes.child(shape.firebase_path).update({ drawStatus: 1 }, (error) => {
+            if (error) {
+                console.log('Cannot draw shape');
+            } else {
+                console.log('Start Draw shape!');
+                store.commit(types.START_DRAW_SHAPE, shape);
+            }
+        });
+    },
+
+    listenShapes: (store) => {
+        console.log('listen shapes');
+        database.shapes.on("child_changed", (snapshot) => {
+            store.commit(types.UPDATE_SHAPE_STATUS, snapshot.val());
         });
     }
 };

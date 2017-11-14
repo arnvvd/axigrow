@@ -19,7 +19,7 @@ class Database {
 
         this.db = firebase.database();
         this.users = this.db.ref('users');
-        this.axidraw = this.db.ref('users');
+        this.axidraw = this.db.ref('axidraw');
         this.shapes = this.db.ref('shapes');
     }
 }

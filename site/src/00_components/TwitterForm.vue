@@ -60,8 +60,6 @@
                     });
             },
 
-
-
             createUser(user) {
                 this.$store.dispatch('createUser', user);
             },
@@ -76,6 +74,7 @@
                 shape.userID = user.id;
                 shape.author = user.pseudonyme;
                 shape.isDraw = false;
+                shape.drawStatus = 0;
 
                 if (type === 0) {
                     shape.toDraw = false;

@@ -52,7 +52,38 @@ Database.prototype.checkConnection = function() {
 }
 
 
+Database.prototype.setAxidrawReady = function() {
+    this.axidraw.update({ status: 1 }, (error) => {
+        if (error) {
+            console.log('Axidraw status cannot be udpated');
+        } else {
+            console.log('Axidraw update to ready!');
+        }
+    });
+}    
 
+
+Database.prototype.setAxidrawInProgress = function() {
+    this.axidraw.update({ status: 2 }, (error) => {
+        if (error) {
+            console.log('Axidraw status cannot be udpated');
+        } else {
+            console.log('Axidraw update to in progress!');
+        }
+    });
+}
+
+
+Database.prototype.endShape = function(shape) {
+    // Update user to firebase
+    this.shapes.child(shape.firebase_path).update({ drawStatus: 2, isDraw: true}, (error) => {
+        if (error) {
+            console.log('Cannot end shape');
+        } else {
+            console.log('End shape!');
+        }
+    });
+}
 
 
 module.exports = Database;
