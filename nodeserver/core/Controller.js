@@ -103,7 +103,7 @@ Controller.prototype.drawShape = function(datasShape) {
         this.database.endShape(datasShape);
         // Set axidraw status to ready
         this.database.setAxidrawReady();
-    }, 3000)
+    }, 10000)
 }
 
 
