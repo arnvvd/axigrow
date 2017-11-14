@@ -8,13 +8,10 @@
         <!-- Else -->
         <navigation v-if='shapesAreFetched'></navigation>
 
-        <div class="container">
-            <div class="container__inner">
-                <transition name="transition-page">
-                    <router-view v-if='shapesAreFetched'></router-view>
-                </transition>
-            </div>
-        </div>
+        <transition v-if='shapesAreFetched' name="transition-page">
+            <router-view></router-view>
+        </transition>
+
     </main>
 </template>
 

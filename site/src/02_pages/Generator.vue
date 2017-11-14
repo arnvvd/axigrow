@@ -1,5 +1,9 @@
 <template>
-    <twitter-form></twitter-form>
+    <section class="container">
+        <div class="container__inner">  
+            <twitter-form></twitter-form>
+        </div>
+    </section>        
 </template>
 
 <script>

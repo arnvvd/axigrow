@@ -1,5 +1,6 @@
 <template>
-    <div style="margin-top: 5rem;">
+    <section class="container">
+        <div class="container__inner"> 
 
 		<div v-if="getShapeById != undefined">
             <h1>Shape ID : {{$route.params.id}}</h1>
@@ -9,7 +10,8 @@
          <!-- Undefined-->
          <pagenotfound v-else></pagenotfound>
 
-    </div>
+        </div>
+    </section>
 </template>
 
 <script>
