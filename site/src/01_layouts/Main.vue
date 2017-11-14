@@ -1,11 +1,17 @@
 <template>
     <main class="main">
-        <!--<navigation></navigation>
-        <btn-increment></btn-increment>-->
+        <!-- If Datas are fetched -->
+        <transition name="transition-page">
+            <div v-if='!shapesAreFetched'>Loader</div>
+        </transition>
+
+        <!-- Else -->
+        <navigation v-if='shapesAreFetched'></navigation>
+
         <div class="container">
             <div class="container__inner">
                 <transition name="transition-page">
-                    <router-view></router-view>
+                    <router-view v-if='shapesAreFetched'></router-view>
                 </transition>
             </div>
         </div>
@@ -14,13 +20,18 @@
 
 <script>
     /*Import Components*/
-    import BtnIncrement from '../00_components/BtnIncrement.vue'
     import Navigation from './Navigation.vue';
+
+    import { mapGetters } from 'vuex'
 
     export default {
         components: {
-            'btn-increment': BtnIncrement,
             'navigation': Navigation
+        },
+        computed: {
+            ...mapGetters([
+                'shapesAreFetched'
+            ])
         },
         created() {
             this.$store.dispatch('getFirebaseDatabase');

@@ -43,6 +43,10 @@ const config = {
                     loader: 'babel-loader'
                 }
             },
+            { 
+                test: /\.json$/, 
+                loader: 'json-loader' 
+            },
             {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
@@ -95,7 +99,13 @@ const config = {
         historyApiFallback: true,
         noInfo: false
     },
-    devtool: '#eval-source-map'
+    devtool: '#eval-source-map',
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
+    }
 };
 
 if (process.env.NODE_ENV === 'production') {

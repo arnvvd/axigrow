@@ -22,8 +22,18 @@
 				<p class="font__logo">D</p>
 			</div>
 		</div>
+		<pre>{{getLastShape}}</pre>
 	</div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
+
+    export default {
+        computed: {
+            ...mapGetters([
+                'getLastShape'
+            ])
+        }
+    }
 </script>

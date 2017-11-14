@@ -8,12 +8,10 @@ import gettersList from './getters';
 import actionList from './actions';
 
 
-
 /* State */
 const state = {
-    count: 0
+    status: 0
 };
-
 
 
 /* Mutations */
@@ -21,8 +19,12 @@ const state = {
 const mutations = {
     // we can use the ES2015 computed property name feature
     // to use a constant as the function name
-    [ types.COUNTER_INCREMENT ] (state) {
-        state.count++;
+    [ types.AXIDRAW_STATUS ] (state, status) {
+        state.status = status;
+    },
+
+    [ types.SET_AXIDRAW_STATUS ] (state, status) {
+        state.status = status.status;
     }
 };
 

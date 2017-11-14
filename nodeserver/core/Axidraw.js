@@ -7,6 +7,9 @@ function Axidraw(opts) {
     // Api
     this.api = opts.api;
 
+    // Database
+    this.database = opts.database;
+ 
     // Event Emitter
     this.readyEvent = new EventEmitter();
 
@@ -142,7 +145,7 @@ Axidraw.prototype.resetPenPos = function(params = false) {
 }
 
 
-Axidraw.prototype.drawShape = function(data) {
+Axidraw.prototype.drawShape = function(data, datasShape) {
     this.setPenPos({
         data: data[0],
         callback: () => {
@@ -153,6 +156,9 @@ Axidraw.prototype.drawShape = function(data) {
                         callback: () => {
                             this.resetPenPos({
                                 callback: () => {
+                                    this.database.endShape(datasShape);
+                                    // Set axidraw status to ready
+                                    this.database.setAxidrawReady();
                                     console.log('ready to draw again');
                                 }
                             })
