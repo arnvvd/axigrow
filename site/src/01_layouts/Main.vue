@@ -6,10 +6,12 @@
         </transition>
 
         <!-- Else -->
+        <site-header v-if='shapesAreFetched' :header-datas="headerDatas"></site-header>
+
         <navigation v-if='shapesAreFetched'></navigation>
 
-        <transition v-if='shapesAreFetched' name="transition-page">
-            <router-view></router-view>
+        <transition name="transition-page">
+            <router-view v-if='shapesAreFetched'></router-view>
         </transition>
 
     </main>
@@ -18,17 +20,20 @@
 <script>
     /*Import Components*/
     import Navigation from './Navigation.vue';
+    import Header from './Header.vue';
 
     import { mapGetters } from 'vuex'
 
     export default {
         data () {
           return {
-            customClass: this.$router.currentRoute.meta.bodyClass
+            customClass: this.$router.currentRoute.meta.bodyClass,
+            headerDatas: this.$router.currentRoute.meta.headerDatas
           }
         },
         components: {
-            'navigation': Navigation
+            'navigation': Navigation,
+            'site-header': Header
         },
         computed: {
             ...mapGetters([
@@ -36,12 +41,12 @@
             ])
         },
         created() {
-            console.log(this.$router.currentRoute.meta.bodyClass);
             this.$store.dispatch('getFirebaseDatabase');
         },
         watch: {
             '$route' () {
-                return this.$data.customClass = this.$router.currentRoute.meta.bodyClass;
+                this.$data.customClass = this.$router.currentRoute.meta.bodyClass;
+                this.$data.headerDatas = this.$router.currentRoute.meta.headerDatas;
             }
         }
     }

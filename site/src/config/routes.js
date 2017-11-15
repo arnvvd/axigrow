@@ -9,14 +9,102 @@ import PageNotFound from '../02_pages/404.vue';
 
 
 const routes = [
-    { path: '/', component: Home, meta: { bodyClass: 'home' }},
-    { path: '/generator', component: Generator, meta: { bodyClass: 'generator' }},
-    { path: '/shapes', component: Archive, meta: { bodyClass: 'archive' }, },
-    { path: '/shapes/:id', component: Single, meta: { bodyClass: 'single' }, },
-    { path: '/about', component: About, meta: { bodyClass: 'about' }, },
-    { path: '/axigrow', component: Axigrow, meta: { bodyClass: 'axidraw' }, },
-    { path: '/dashboard', component: Dashboard, meta: { bodyClass: 'dashboard' }, },
-    { path: "*", component: PageNotFound, meta: { bodyClass: '404' }, }
+    { 
+        path: '/', 
+        component: Home, 
+        meta: { 
+            bodyClass: 'home',
+            headerDatas: {
+                navigation: false,
+                home: false,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: '/generator', 
+        component: Generator, 
+        meta: { 
+            bodyClass: 'generator',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: '/shapes', 
+        component: Archive, 
+        meta: { 
+            bodyClass: 'archive',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: '/shapes/:id', 
+        component: Single, 
+        meta: { 
+            bodyClass: 'single',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: '/about', 
+        component: About, 
+        meta: { 
+            bodyClass: 'about',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: '/axigrow', 
+        component: Axigrow, 
+        meta: { 
+            bodyClass: 'axidraw is-black',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: true
+            } 
+        }
+    },
+    { 
+        path: '/dashboard', 
+        component: Dashboard, 
+        meta: { 
+            bodyClass: 'dashboard',
+            headerDatas: {
+                navigation: true,
+                home: false,
+                grow: false
+            } 
+        }
+    },
+    { 
+        path: "*", 
+        component: PageNotFound, 
+        meta: { 
+            bodyClass: '404',
+            headerDatas: {
+                navigation: true,
+                home: true,
+                grow: false
+            } 
+        }
+    }
 ];
 
 export default routes;

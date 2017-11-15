@@ -1,14 +1,14 @@
 .container {
 	display: table;
 	width: 100%;
-	max-width: 96rem;
+	max-width: 100rem;
 	min-height: 100vh;
 	margin: 0 auto;
 
 	&__inner {
 		display: table-cell;
 		vertical-align: middle;
-		padding: 10rem 0;
+		padding: 10rem 2rem;
 	}
 }
 
