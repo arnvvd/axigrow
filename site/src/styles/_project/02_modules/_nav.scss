@@ -3,5 +3,127 @@
 /************************/
 
 .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
 
+    &__wrapper{
+        display: block;
+        width: 100vw;
+        height: 100vh
+    }
+
+    &__item {
+        position: absolute;
+        top: 0;
+        width: 100vh;
+        text-align: center;
+        overflow: hidden;
+
+        &:nth-child(1) {
+            left: 6.5rem;
+            transform: rotate(90deg);
+            transform-origin: 0 0;       
+        }
+
+        &:nth-child(2){
+            right: 6.5rem;
+            transform: rotate(-90deg);
+            transform-origin: 100% 0; 
+        }
+
+        &__wrapper{
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+        }
+
+        &__title {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+
+        &__subwrapper {
+            position: relative;
+            height: 6.5rem;
+        }
+    }
+}
+
+
+.home {
+    .nav {
+        opacity: 1;
+
+        &__item__wrapper{
+            transform: translateY(-50%);
+            opacity: 1;
+            transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+        }
+
+        &__item__subwrapper{
+            pointer-events: auto;
+        }
+    }
+}
+
+
+.about {
+    .nav {
+        opacity: 1;
+
+        &__item {
+            &:nth-child(1) {
+                .nav__item__wrapper{
+                    transform: translateY(-100%);
+                    opacity:0;
+                    transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+                    .nav__item__subwrapper {
+                        pointer-events: auto;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .nav__item__wrapper{
+                    transform: translateY(0);
+                    opacity:1;
+                    transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+                }
+            }
+        }
+    }
+}
+
+
+.generator {
+    .nav {
+        opacity: 1;
+
+        &__item {
+            &:nth-child(1) {
+                .nav__item__wrapper{
+                    transform: translateY(0);
+                    opacity:1;
+                    transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+                }
+            }
+
+            &:nth-child(2) {
+                .nav__item__wrapper{
+                    transform: translateY(-100%);
+                    opacity:0;
+                    transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+                    .nav__item__subwrapper {
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+    }
 }

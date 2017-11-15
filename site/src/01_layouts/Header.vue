@@ -18,7 +18,7 @@
 					    </g>
 					</svg>
 	            </div>
-	            <nav class="header-navigation paragraph-1">
+	            <nav class="header-navigation text-1">
 		            <ul class="header-navigation__wrapper">
 			        	<li class="header-navigation__wrapper__item" :class="[headerDatas.home ? 'is-active' : '', 'header-navigation__wrapper__item']">
 			        		<router-link to="/">
