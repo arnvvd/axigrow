@@ -1,5 +1,5 @@
 <template>
-    <main class="main">
+    <main v-bind:class="[customClass]">
         <!-- If Datas are fetched -->
         <transition name="transition-page">
             <div v-if='!shapesAreFetched'>Loader</div>
@@ -22,6 +22,11 @@
     import { mapGetters } from 'vuex'
 
     export default {
+        data () {
+          return {
+            customClass: this.$router.currentRoute.meta.bodyClass
+          }
+        },
         components: {
             'navigation': Navigation
         },
@@ -31,7 +36,13 @@
             ])
         },
         created() {
+            console.log(this.$router.currentRoute.meta.bodyClass);
             this.$store.dispatch('getFirebaseDatabase');
+        },
+        watch: {
+            '$route' () {
+                return this.$data.customClass = this.$router.currentRoute.meta.bodyClass;
+            }
         }
     }
 </script>

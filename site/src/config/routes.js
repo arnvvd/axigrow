@@ -9,14 +9,14 @@ import PageNotFound from '../02_pages/404.vue';
 
 
 const routes = [
-    { path: '/', component: Home},
-    { path: '/generator', component: Generator },
-    { path: '/shapes', component: Archive },
-    { path: '/shapes/:id', component: Single },
-    { path: '/about', component: About },
-    { path: '/axigrow', component: Axigrow },
-    { path: '/dashboard', component: Dashboard },
-    { path: "*", component: PageNotFound }
+    { path: '/', component: Home, meta: { bodyClass: 'home' }},
+    { path: '/generator', component: Generator, meta: { bodyClass: 'generator' }},
+    { path: '/shapes', component: Archive, meta: { bodyClass: 'archive' }, },
+    { path: '/shapes/:id', component: Single, meta: { bodyClass: 'single' }, },
+    { path: '/about', component: About, meta: { bodyClass: 'about' }, },
+    { path: '/axigrow', component: Axigrow, meta: { bodyClass: 'axidraw' }, },
+    { path: '/dashboard', component: Dashboard, meta: { bodyClass: 'dashboard' }, },
+    { path: "*", component: PageNotFound, meta: { bodyClass: '404' }, }
 ];
 
 export default routes;
