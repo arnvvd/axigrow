@@ -85,6 +85,7 @@ Controller.prototype.listenShapes = function() {
 
     this.database.shapes.on("child_changed", (snapshot) => {
        this.drawShape(snapshot.val())
+       console.log("coucou")
     }, function (error) {
        console.log('\x1b[31m', 'Error: ' + error.code);
     });
