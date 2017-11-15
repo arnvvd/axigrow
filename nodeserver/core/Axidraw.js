@@ -26,7 +26,6 @@ Axidraw.prototype.init = function()  {
         method: 'GET'
     },
     (err, res, body) => {
-
         if (res != undefined && res.statusCode === 200) {
             this.readyEvent.emit('isReady', true);
         } else {

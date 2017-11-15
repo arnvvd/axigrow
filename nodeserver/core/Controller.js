@@ -15,7 +15,7 @@ function Controller(opts) {
 	// Axidraw Config
 	this.axidrawIP = opts.axidrawIP
     this.SHEET_RATIO = (210 / 297); // A4
-
+    
 	this.init();
 }
 
@@ -80,12 +80,15 @@ Controller.prototype.listenShapes = function() {
     console.log('listen shapes');
 
     // TO REMOVE
-    this.database.setAxidrawReady();
+    //this.database.setAxidrawReady();
     ////////////
 
     this.database.shapes.on("child_changed", (snapshot) => {
-       this.drawShape(snapshot.val())
-       console.log("coucou")
+       if (snapshot.val().drawStatus === 1) {
+            this.drawShape(snapshot.val())
+            console.log(snapshot.val());
+            console.log("coucou")
+       } 
     }, function (error) {
        console.log('\x1b[31m', 'Error: ' + error.code);
     });
