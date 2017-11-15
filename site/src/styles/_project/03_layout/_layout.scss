@@ -17,3 +17,15 @@
 	width: 33%;
 	text-align:center;
 }
+
+main {
+	background-color: $white;
+	color: $black;
+	transition: background-color 1.2s cubic-bezier(.4,0,0,1);
+
+	&.is-black {
+		background-color: $black;
+		color: $white;
+		transition: background-color 1.2s cubic-bezier(.4,0,0,1);
+	}
+} 

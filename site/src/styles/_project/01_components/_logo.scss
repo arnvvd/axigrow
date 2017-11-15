@@ -3,11 +3,26 @@
 /********************/
 
 .logo {
-
+	
 	max-width: 16rem;
+
+	circle,
+	path,
+	polygon {
+		fill: $body-text;
+		transition: fill .6s cubic-bezier(.4,0,0,1);
+	}
+
+	.is-black & {
+		circle,
+		path,
+		polygon {
+			fill: $white;
+			transition: fill .6s cubic-bezier(.4,0,0,1);
+		}
+	}
 	
 	&__wrapper{
 		text-align: center;
 	}
-
 }

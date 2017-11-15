@@ -54,12 +54,35 @@
 
 				svg {
 					width: auto;
+
+					circle,
+					path,
+					polygon {
+						fill: $body-text;
+						transition: fill 1.2s cubic-bezier(.4,0,0,1);
+					}
+
+					.is-black & {
+						circle,
+						path,
+						polygon {
+							fill: $white;
+							transition: fill 1.2s cubic-bezier(.4,0,0,1);
+						}
+					}
 				}
 
 				span {
 					display: inline-block;
 					vertical-align: middle;
 					line-height: 1;
+					color: $body-text;
+					transition: color 1.2s cubic-bezier(.4,0,0,1);
+
+					.is-black & {
+						color: $white;
+						transition: color 1.2s cubic-bezier(.4,0,0,1);
+					}
 				}
 
 				&:nth-child(2) {
