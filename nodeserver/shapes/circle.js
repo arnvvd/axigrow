@@ -3,7 +3,7 @@ function Circle(opts) {
     // Support
     this.sheetRatio = opts.sheetRatio;
     this.sheetWidth = 100; // Percent
-    this.sheetHeight = 100 * this.sheetRatio;
+    this.sheetHeight = 100 * this.sheetRatio; // 70 percent
 
 
     // Shape

@@ -4,6 +4,7 @@ const Database = require('./Database.js');
 
 // Imports Shapes
 const Circle = require('../shapes/Circle.js');
+const Shape = require('../shapes/shape.js');
 
 
 function Controller(opts) {
@@ -14,7 +15,7 @@ function Controller(opts) {
 
 	// Axidraw Config
 	this.axidrawIP = opts.axidrawIP
-    this.SHEET_RATIO = (210 / 297); // A4
+    this.SHEET_RATIO = (148.5 / 210); // A5
     
 	this.init();
 }
@@ -56,7 +57,7 @@ Controller.prototype.setAxidraw = function() {
 
     // AxiDraw
     this.axidraw = new Axidraw({
-        api: 'http://' + this.axidrawIP + ':4242/v1/pen',
+        api: 'http://' + this.axidrawIP + ':4242/v1',
         database: this.database
     })
 
@@ -100,7 +101,7 @@ Controller.prototype.drawShape = function(datasShape) {
     // Set axidraw status to in progress
     this.database.setAxidrawInProgress();
     // Set Shape
-    this.setShape();
+    this.setShape(datasShape);
     // TODO drawShape
     this.axidraw.drawShape(this.shape.pointsPosition, datasShape);
 }
@@ -108,14 +109,27 @@ Controller.prototype.drawShape = function(datasShape) {
 
 
 // SHAPES
-Controller.prototype.setShape = function() {
+Controller.prototype.setShape = function(datasShape) {
 
-    this.shape = new Circle({
+    // this.shape = new Circle({
+    //     sheetRatio: this.SHEET_RATIO,
+    //     radius: 25, // 0 to 50%
+    //     posX: 50, // 0 to 100%
+    //     posY: 50, // 0 to 100%
+    //     pointsLength: 50
+    // })
+    
+
+    this.shape = new Shape({
         sheetRatio: this.SHEET_RATIO,
-        radius: 25, // 0 to 50%
         posX: 50, // 0 to 100%
         posY: 50, // 0 to 100%
-        pointsLength: 50
+
+        followers: datasShape.followers,
+        tweets: datasShape.following,
+        likes: datasShape.likes,
+        days: 200,
+        multiplier: 1
     })
 
 }
