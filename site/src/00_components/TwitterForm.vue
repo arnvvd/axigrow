@@ -20,7 +20,7 @@
     		return {
     			username: '',
                 error: false
-    		}
+            }
     	},
 
         methods: {

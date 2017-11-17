@@ -12,15 +12,32 @@
 	pointer-events: none;
 	transition: opacity .6s cubic-bezier(.4,0,0,1);
 	
-	background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, #FFFFFF 50%);
-	background-size: cover;
-	background-position: center;
-	transition: background .6s cubic-bezier(.4,0,0,1);
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		background-size: cover;
+		background-position: center;
+		transition: opacity .6s cubic-bezier(.4,0,0,1);
+	}
+
+	.is-white & {
+		&:before {
+			opacity: 1;
+			background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, #FFFFFF 50%);
+		}
+	}
 
 
 	.is-black & {
-		background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 50%);
-		transition: background .6s cubic-bezier(.4,0,0,1);
+		&:after {
+			opacity: 1;
+			background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 50%);
+		}
 	}
 
 	&.is-active {

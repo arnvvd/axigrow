@@ -13,7 +13,7 @@ const routes = [
         path: '/', 
         component: Home, 
         meta: { 
-            bodyClass: 'home',
+            bodyClass: 'home is-white',
             headerDatas: {
                 navigation: false,
                 home: false,
@@ -25,7 +25,7 @@ const routes = [
         path: '/generator', 
         component: Generator, 
         meta: { 
-            bodyClass: 'generator',
+            bodyClass: 'generator is-white',
             headerDatas: {
                 navigation: true,
                 home: true,
@@ -37,7 +37,7 @@ const routes = [
         path: '/shapes', 
         component: Archive, 
         meta: { 
-            bodyClass: 'archive',
+            bodyClass: 'archive is-white',
             headerDatas: {
                 navigation: true,
                 home: true,
@@ -85,7 +85,7 @@ const routes = [
         path: '/dashboard', 
         component: Dashboard, 
         meta: { 
-            bodyClass: 'dashboard',
+            bodyClass: 'dashboard is-white',
             headerDatas: {
                 navigation: true,
                 home: true,
@@ -97,7 +97,7 @@ const routes = [
         path: "*", 
         component: PageNotFound, 
         meta: { 
-            bodyClass: '404',
+            bodyClass: '404 is-white',
             headerDatas: {
                 navigation: true,
                 home: true,

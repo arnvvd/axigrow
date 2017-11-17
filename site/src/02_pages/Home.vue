@@ -25,15 +25,20 @@
 				</div>
 			</div>
 			<pre>{{getLastShape}}</pre>
+			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false"></shape-canvas>
 		</div>      
         </div>
     </section>
 </template>
 
 <script>
+	import Canvas from '../00_components/Canvas.vue'
     import { mapGetters } from 'vuex'
 
     export default {
+    	components: {
+            'shape-canvas': Canvas,
+        },
         computed: {
             ...mapGetters([
                 'getLastShape'

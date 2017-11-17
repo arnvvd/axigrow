@@ -7,6 +7,8 @@ import { database } from '../../core/database';
 
 import * as types from '../mutation-types';
 
+import router from '../../core/router.js';
+
 const actionsList = {
 
     createShape: (store, shape) => {
@@ -18,6 +20,8 @@ const actionsList = {
 
         // add shape to firebase
         addShapeToDatabase(firebasePath, shape);
+
+        router.push({ path: `/shapes/${shape.id}`});
 
         // Store new shape
         //store.commit(types.ADD_NEW_SHAPE, shape);

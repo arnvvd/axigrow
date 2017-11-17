@@ -2,13 +2,14 @@
     <section class="container">
         <div class="container__inner"> 
 
-		<div v-if="getShapeById != undefined">
-            <h1>Shape ID : {{$route.params.id}}</h1>
-            <pre>{{getShapeById}}</pre>
-        </div>
+    		<div class="content" v-if="getShapeById != undefined">
+                <h1>Shape ID : {{$route.params.id}}</h1>
+                <pre>{{getShapeById}}</pre>
+                <shape-canvas :shapeObj="shapeObj" :isBackgroundBlack="isBackgroundBlack" ></shape-canvas>   
+            </div>
 
-         <!-- Undefined-->
-         <pagenotfound v-else></pagenotfound>
+             <!-- Undefined-->
+            <pagenotfound v-else></pagenotfound>
 
         </div>
     </section>
@@ -16,20 +17,39 @@
 
 <script>
 
+    import Canvas from '../00_components/Canvas.vue'
     import PageNotFound from './404.vue'
 
     export default {
+        data() {
+            return {
+                shapeObj: {}
+            }
+        },
     	components: {
             'pagenotfound': PageNotFound,
+            'shape-canvas': Canvas,
         },
         computed: {
         	getShapeById() {
-        		console.log(this.$store.getters.getShapeById(this.$route.params.id));
-        		return this.$store.getters.getShapeById(this.$route.params.id);
+                let shapeObj = this.$store.getters.getShapeById(this.$route.params.id);
+                this.shapeObj = shapeObj;
+                this.setBackgroundColor(shapeObj.toDraw);
+        		return shapeObj;
         	}
-        },
-        created() {
-        	console.log(this.$route.params.id);
+        }, 
+        methods: {
+            setBackgroundColor(toDraw) {
+                let main = document.body.querySelector('main');
+
+                if (toDraw) {
+                    main.classList.add('is-black');
+                    this.isBackgroundBlack = true;
+                } else {
+                    main.classList.add('is-white');
+                    this.isBackgroundBlack = false;
+                }
+            }
         }
     }
 </script>
