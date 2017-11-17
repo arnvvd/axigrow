@@ -1,10 +1,11 @@
 <template>
 	<div class="generator__form">
-		<input class="input--name" type="text" placeholder="Ton pseudo" v-model="username">
+		<input class="input--name" type="text" placeholder="@Username twitter" v-model="username">
         <div class="submit__buttons">
             <button @click="onSubmit(0)" class="input--submit input--submit-01">Generate your shape</button>
             <button @click="onSubmit(1)" class="input--submit input--submit-02">Print your shape*</button>
         </div>
+        <p class="generator__form__advice">*Si vous êtes participant à l’événement <span class="underline">GROW</span>, imprimez votre forme sur l’Axidraw</p>
 	</div>
 </template>
 

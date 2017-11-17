@@ -7,6 +7,11 @@
 	text-transform:uppercase;
 }
 
+.underline {
+	text-decoration: underline;
+	font-family: $font-bold;
+}
+
 // Hide only for viewer not for bot
 .hide-for-viewer{
 	@include hide-for-viewer;

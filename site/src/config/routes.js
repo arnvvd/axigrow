@@ -88,7 +88,7 @@ const routes = [
             bodyClass: 'dashboard',
             headerDatas: {
                 navigation: true,
-                home: false,
+                home: true,
                 grow: false
             } 
         }

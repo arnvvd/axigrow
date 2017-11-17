@@ -31,3 +31,19 @@
 	font-size: 2.2rem;
 	line-height: 1.6;
 }
+
+.dashboard-list {
+	font-family: $font-regular;
+	font-size: 1.6rem;
+	line-height: 1.4;
+
+	&__username {
+		font-family: $font-semibold;
+	}
+}
+
+.axidraw-status {
+	font-family: $font-semibold;
+	font-size: 2.2rem;
+	line-height: 1.4;
+}

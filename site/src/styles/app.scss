@@ -49,3 +49,14 @@ Version: 1.0
   transform: translateX(10px);
   opacity: 0;
 }
+
+
+
+.transition-list-leave-active {
+  transition: all .4s ease;
+}
+.transition-list-leave-to
+  /* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}

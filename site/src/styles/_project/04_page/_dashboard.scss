@@ -1,0 +1,86 @@
+.dashboard {
+	
+	&-list {
+		&__item {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 3rem 0;
+			border-top: 1px solid $grey;
+
+			&:last-child {
+				border-bottom: 1px solid $grey;
+			}
+		}
+	}
+
+	&-button {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		padding: .1rem 0;
+		background-color: $white;
+		border: 1px solid $grey;
+		transition: background .6s cubic-bezier(.4,0,0,1), border .6s cubic-bezier(.4,0,0,1);
+		
+		svg {
+			pointer-events: none;
+		}
+		path {
+			fill: $grey;
+			transition: fill .6s cubic-bezier(.4,0,0,1);
+		}
+
+		&:hover,
+		.is-active {
+			background-color: $black;
+			border: 1px solid $black;
+			transition: background .6s cubic-bezier(.4,0,0,1), border .6s cubic-bezier(.4,0,0,1);
+
+			path {
+				fill: $white;
+				transition: fill .6s cubic-bezier(.4,0,0,1);
+			}
+		}
+	}
+}
+
+.axidraw-status {
+	padding-bottom: 6rem;
+	text-align: center;
+	
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		&:after {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			width: 1.8rem;
+			height: 1.8rem;
+			border-radius: 50%;
+			margin-left: 1rem;
+		}
+	}
+
+	&--notready{
+		&:after {
+			background-color: $c-notready;
+		}
+	}
+	&--ready{
+		&:after {
+			background-color: $c-ready;
+		}
+	}
+	&--inprogress{
+		&:after {
+			background-color: $c-inprogress;
+		}
+	}
+	
+}
