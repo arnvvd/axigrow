@@ -129,7 +129,7 @@ Controller.prototype.setShape = function(datasShape) {
         tweets: datasShape.following,
         likes: datasShape.likes,
         days: 200,
-        multiplier: 1
+        multiplier: 2
     })
 
 }
