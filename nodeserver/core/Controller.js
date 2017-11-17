@@ -15,7 +15,7 @@ function Controller(opts) {
 
 	// Axidraw Config
 	this.axidrawIP = opts.axidrawIP
-    this.SHEET_RATIO = (148.5 / 210); // A5
+    this.SHEET_RATIO = (210 / 297); // A4
     
 	this.init();
 }
