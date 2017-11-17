@@ -5,7 +5,7 @@
     		<div class="content" v-if="getShapeById != undefined">
                 <h1>Shape ID : {{$route.params.id}}</h1>
                 <pre>{{getShapeById}}</pre>
-                <shape-canvas :shapeObj="shapeObj" :isBackgroundBlack="isBackgroundBlack" ></shape-canvas>   
+                <shape-canvas :shapeObj="shapeObj" :isBackgroundBlack="isBackgroundBlack" :page="page"></shape-canvas>   
             </div>
 
              <!-- Undefined-->
@@ -23,7 +23,8 @@
     export default {
         data() {
             return {
-                shapeObj: {}
+                shapeObj: {},
+                page: 'single'
             }
         },
     	components: {

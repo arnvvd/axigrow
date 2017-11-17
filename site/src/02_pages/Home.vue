@@ -25,7 +25,7 @@
 				</div>
 			</div>
 			<pre>{{getLastShape}}</pre>
-			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false"></shape-canvas>
+			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false" :page="page"></shape-canvas>
 		</div>      
         </div>
     </section>
@@ -36,6 +36,11 @@
     import { mapGetters } from 'vuex'
 
     export default {
+    	data () {
+          return {
+            page: 'home',
+          }
+        },
     	components: {
             'shape-canvas': Canvas,
         },

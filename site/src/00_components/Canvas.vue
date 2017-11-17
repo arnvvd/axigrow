@@ -1,5 +1,8 @@
 <template>
-    <div class="canvas__wrapper"></div>
+    <div class="canvas">
+        <div v-if="page === 'single'" class="canvas__wrapper canvas__wrapper--single"></div>
+        <div v-if="page === 'home'" class="canvas__wrapper canvas__wrapper--home"></div>
+    </div>
 </template>
 
 <script>
@@ -17,7 +20,7 @@
     		}
     	},
 
-        props: ['shapeObj', 'isBackgroundBlack'],
+        props: ['shapeObj', 'isBackgroundBlack', 'page'],
 
         methods: {
             /**
@@ -58,7 +61,12 @@
 
         mounted() {
             // Root
-            this.root = document.body.querySelector('.canvas__wrapper');
+            
+            if (this.page === "single") {
+                this.root = document.body.querySelector('.canvas__wrapper--single');
+            } else if (this.page === "home") {
+                this.root = document.body.querySelector('.canvas__wrapper--home');
+            }
 
             // Create Canvas
             this.canvas = document.createElement('canvas');
@@ -81,9 +89,6 @@
 
         watch: { 
             shapeObj: function(newVal, oldVal) { // watch it
-                console.log(newVal);
-                console.log("new Val");
-                console.log(this);
                 this.setCard();
                 this.render(); 
             }
