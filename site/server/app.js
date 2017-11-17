@@ -1,13 +1,9 @@
 // server/app.js
 const express = require('express');
-const morgan = require('morgan');
 const twitter = require('./twitter-client.js');
 const path = require('path');
 
 const app = express();
-
-// Setup logger
-app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
 
 // Serve static assets
 app.use('/dist', express.static('dist'));

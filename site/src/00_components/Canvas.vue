@@ -30,9 +30,9 @@
 
                 this.shape = new Shape(this.ctx, {
                     followers: this.shapeObj.followers,
-                    tweets: this.shapeObj.following,
+                    tweets: this.shapeObj.tweets,
                     likes: this.shapeObj.likes,
-                    days: 255, //this.shapeObj.days
+                    days: this.shapeObj.daysCount, //this.shapeObj.days
                     width: this.canvas.width,
                     height: this.canvas.height,
                     isBlack: this.isBackgroundBlack,
@@ -61,7 +61,7 @@
 
         mounted() {
             // Root
-            
+
             if (this.page === "single") {
                 this.root = document.body.querySelector('.canvas__wrapper--single');
             } else if (this.page === "home") {
@@ -87,10 +87,10 @@
             this.render();
         },
 
-        watch: { 
+        watch: {
             shapeObj: function(newVal, oldVal) { // watch it
                 this.setCard();
-                this.render(); 
+                this.render();
             }
         }
     }

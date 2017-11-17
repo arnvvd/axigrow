@@ -13,6 +13,7 @@
 
     /* Import */
     import axios from 'axios';
+    import moment from 'moment';
 
     export default {
 
@@ -43,14 +44,21 @@
 
                         let profile = {};
 
+                        var tweetDate = twitterProfile.created_at;
+                        let createDate = moment(tweetDate, 'dd MMM DD HH:mm:ss ZZ YYYY', 'en').toDate();
+                        let nowDate = moment().toDate();
+                        let daysCount = moment(nowDate).diff(createDate, 'days')
+
                         profile.id = twitterProfile.id;
                         profile.pseudonyme = twitterProfile.screen_name;
                         profile.name = twitterProfile.name;
                         profile.followers = twitterProfile.followers_count;
                         profile.following = twitterProfile.friends_count;
+                        profile.tweets = twitterProfile.statuses_count;
                         profile.likes = twitterProfile.favourites_count;
                         profile.location = twitterProfile.location;
                         profile.account_created_at = twitterProfile.created_at;
+                        profile.daysCount = daysCount;
 
 
                         // Create User
@@ -75,9 +83,11 @@
 
                 shape.followers = user.followers;
                 shape.following = user.following;
+                shape.tweets = user.tweets;
                 shape.likes = user.likes;
                 shape.userID = user.id;
                 shape.author = user.pseudonyme;
+                shape.daysCount = user.daysCount;
                 shape.isDraw = false;
                 shape.drawStatus = 0;
 

@@ -35,9 +35,11 @@ const actionsList = {
                     // Update datas
                     userData.followers = user.followers;
                     userData.following = user.following;
+                    userData.tweets = user.tweets;
                     userData.likes = user.likes;
+                    userData.daysCount = user.daysCount;
 
-                    // Push User in Database           
+                    // Push User in Database
                     updateUserToDatabase(item.key, userData);
                 });
             }
