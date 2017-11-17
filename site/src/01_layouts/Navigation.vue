@@ -1,6 +1,6 @@
 <template>
     <div> 
-        <nav>
+        <!-- <nav>
             <ul>
                 <li>
                     <router-link to="/">Home</router-link>
@@ -21,8 +21,8 @@
                     <router-link to="/axigrow">Axigrow</router-link>
                 </li>
             </ul>
-        </nav>
-        <!-- <nav class="nav">
+        </nav> -->
+        <nav class="nav">
             <ul class="nav__wrapper title-1">
                 <li class="nav__item">
                     <div class="nav__item__wrapper">
@@ -45,6 +45,6 @@
                     </div>
                 </li>
             </ul>
-        </nav> -->
+        </nav>
     </div>
 </template>

@@ -61,7 +61,7 @@ const routes = [
         path: '/about', 
         component: About, 
         meta: { 
-            bodyClass: 'about',
+            bodyClass: 'about is-black',
             headerDatas: {
                 navigation: true,
                 home: true,

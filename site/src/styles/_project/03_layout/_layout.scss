@@ -1,3 +1,4 @@
+// CONTAINER
 .container {
 	display: table;
 	width: 100%;
@@ -9,14 +10,21 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 10rem 2rem;
+
+		.content:first-of-type {
+			padding-top: 10rem;
+		}
 	}
 }
 
+//LETTER CONTAINER
 .letter__container {
 	display: inline-block;
 	width: 33%;
 	text-align:center;
 }
+
+// MAIN
 
 main {
 	background-color: $white;
@@ -29,3 +37,27 @@ main {
 		transition: background-color 1.2s cubic-bezier(.4,0,0,1);
 	}
 } 
+
+
+// CONTENT
+.content {
+	&-col {
+		&__item {
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+			@include no-inline-block-margin();
+		}
+	}
+
+	& + .content {
+		margin-top: 6rem;
+	}
+
+	p + p,
+	h1 + p,
+	h2 + p,
+	h3 + p {
+		margin-top: 6rem;
+	}
+}
