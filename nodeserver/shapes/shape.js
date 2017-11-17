@@ -14,6 +14,7 @@ function Shape(opts) {
     this.tweets = opts.tweets;
     this.likes = opts.likes;
     this.days = opts.days;
+    console.log(this.days);
 
     // Shape
     //this.radius = this.sheetHeight / (100 / opts.radius);
@@ -40,7 +41,7 @@ function Shape(opts) {
 Shape.prototype.makeNoise = function() {
     this.random = new Alea(this.tweets);
     this.simplex = new SimplexNoise(this.random);
-    this.numPoints = jsMap(this.days, 0, 2920, 10, 300);
+    this.numPoints = jsMap(this.days, 0, 2920, 10, 150);
 }
 
 
@@ -75,11 +76,11 @@ Shape.prototype.render = function(r) {
     let R = r;
     let pathPoints = [];
 
-    for(let i = 0; i < this.days; i++){
+    for(let i = 0; i < this.numPoints; i++){
 
         var shapePosition = {};
 
-        let angle = jsMap(i, 0, this.days, 0, radians(360));
+        let angle = jsMap(i, 0, this.numPoints, 0, radians(360));
         let x = Math.cos(angle);
         let y = Math.sin(angle);
         let n = this.simplex.noise2D(x + this.likes, y + this.followers);
@@ -96,6 +97,7 @@ Shape.prototype.render = function(r) {
     }
 
     this.pointsPosition.push(pathPoints);
+    console.log(this.numPoints);
 }
 
 
