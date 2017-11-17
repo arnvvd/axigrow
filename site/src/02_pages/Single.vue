@@ -8,8 +8,8 @@
                     <div class="datas datas--03"><p class="data-number">245</p></div>
                     <div class="datas datas--04"><p class="data-number">245</p></div>
                 </div>
-                <!--<h1>Shape ID : {{$route.params.id}}</h1>
-                <pre>{{getShapeById}}</pre>-->
+                <h1>Shape ID : {{$route.params.id}}</h1>
+                <pre>{{getShapeById}}</pre>
                 <shape-canvas :shapeObj="shapeObj" :isBackgroundBlack="isBackgroundBlack" ></shape-canvas>   
             </div>
 

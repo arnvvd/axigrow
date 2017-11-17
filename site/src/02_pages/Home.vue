@@ -24,7 +24,7 @@
 					<p class="font__logo">D</p>
 				</div>
 			</div>
-			<!--<pre>{{getLastShape}}</pre>-->
+			<pre>{{getLastShape}}</pre>
 			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false"></shape-canvas>
 		</div>      
         </div>
