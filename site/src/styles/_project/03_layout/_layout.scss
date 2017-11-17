@@ -4,6 +4,7 @@
 	width: 100%;
 	max-width: 100rem;
 	min-height: 100vh;
+	height: 0;
 	margin: 0 auto;
 
 	&__inner {
@@ -13,6 +14,15 @@
 
 		.content:first-of-type {
 			padding-top: 10rem;
+		}
+
+		&--about {
+			padding: 30rem 2rem;
+		}
+
+		&--single {
+			position: relative;
+			padding: 20rem 2rem;
 		}
 	}
 }
@@ -41,11 +51,13 @@ main {
 
 // CONTENT
 .content {
+	height: 100%;
 	&-col {
 		&__item {
 			display: inline-block;
 			vertical-align: top;
 			width: 50%;
+			height: 100%;
 			@include no-inline-block-margin();
 		}
 	}
