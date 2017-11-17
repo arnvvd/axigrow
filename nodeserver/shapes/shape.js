@@ -41,7 +41,10 @@ function Shape(opts) {
 Shape.prototype.makeNoise = function() {
     this.random = new Alea(this.tweets);
     this.simplex = new SimplexNoise(this.random);
-    this.numPoints = jsMap(this.days, 0, 2920, 10, 150);
+    if(this.days > 3000){
+        this.days == 3000;
+    }
+    this.numPoints = jsMap(this.days, 0, 3000, 10, 50);
 }
 
 

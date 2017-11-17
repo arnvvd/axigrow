@@ -52,7 +52,7 @@
                 this.ctx.save();
                 this.ctx.translate(this.canvas.width/2, this.canvas.height/2);
                 this.ctx.rotate(Math.PI*2);
-                for(let i = 1; i < 40; i++){
+                for(let i = 1; i < 31; i++){
                     this.shape.render(i);
                 }
                 this.ctx.restore();

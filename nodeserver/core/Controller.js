@@ -126,10 +126,10 @@ Controller.prototype.setShape = function(datasShape) {
         posY: 50, // 0 to 100%
 
         followers: datasShape.followers,
-        tweets: datasShape.following,
+        tweets: datasShape.tweets,
         likes: datasShape.likes,
-        days: 200,
-        multiplier: 1
+        days: datasShape.daysCount,
+        multiplier: 0.4
     })
 
 }

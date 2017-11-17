@@ -37,11 +37,17 @@ export default class Shape {
         return num2;
     }
 
+    radians(degrees) {
+        return degrees * Math.PI / 180;
+    }
 
     makeNoise() {
         this.random = new Alea(this.tweets);
         this.simplex = new SimplexNoise(this.random);
-        this.numPoints = this.jsMap(this.days, 0, 2920, 10, 200);
+        if (this.days > 3000) {
+            this.days == 3000;
+        }
+        this.numPoints = this.jsMap(this.days, 0, 3000, 10, 50);
     }
 
 
@@ -51,7 +57,7 @@ export default class Shape {
         this.ctx.save();
         this.ctx.beginPath();
         for (let i = 0; i < this.numPoints; i++) {
-            let angle = this.jsMap(i, 0, this.numPoints, 0, Math.PI*2);
+            let angle = this.jsMap(i, 0, this.numPoints, 0, this.radians(360));
             let x = Math.cos(angle);
             let y = Math.sin(angle);
             let n = this.simplex.noise2D(x + this.likes, y + this.followers);
