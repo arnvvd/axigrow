@@ -1,6 +1,6 @@
 <template>
     <section class="container">
-        <div class="container__inner">
+        <div class="container__inner container__inner--about">
         	<div class="content">
         		<h1 class="title-2">You’re shape is ready to be printed&nbsp;!</h1>
         		<p>Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>

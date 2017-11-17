@@ -36,7 +36,7 @@
                     width: this.canvas.width,
                     height: this.canvas.height,
                     isBlack: this.isBackgroundBlack,
-                    multiplier: 5
+                    multiplier: 3
                 });
 
             },
@@ -52,7 +52,7 @@
                 this.ctx.save();
                 this.ctx.translate(this.canvas.width/2, this.canvas.height/2);
                 this.ctx.rotate(Math.PI*2);
-                for(let i = 1; i < 20; i++){
+                for(let i = 1; i < 40; i++){
                     this.shape.render(i);
                 }
                 this.ctx.restore();
