@@ -48,7 +48,7 @@ Shape.prototype.makeNoise = function() {
 Shape.prototype.init = function() {
 
 
-    for(let i = 1; i < 12; i++){
+    for(let i = 1; i < 31; i++){
       this.render(i);
     }
 
@@ -92,6 +92,18 @@ Shape.prototype.render = function(r) {
 
         shapePosition.x = (shapePosition.x / this.sheetWidth) * 100;
         shapePosition.y = (shapePosition.y / this.sheetHeight) * 100;
+
+        if (shapePosition.x >= 100) {
+            shapePosition.x = 99;
+        } else if (shapePosition.x <= 0) {
+            shapePosition.x = 1;
+        }
+
+        if (shapePosition.y >= 100) {
+            shapePosition.y = 99;
+        } else if (shapePosition.y <= 0) {
+            shapePosition.y = 1;
+        }
 
         pathPoints.push(shapePosition);
     }
