@@ -51,7 +51,7 @@
                     width: this.canvas.width,
                     height: this.canvas.height,
                     isBlack: this.isBackgroundBlack,
-                    multiplier: 3
+                    multiplier: 5
                 });
 
             },

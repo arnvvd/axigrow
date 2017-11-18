@@ -24,13 +24,13 @@
         overflow: hidden;
 
         &:nth-child(1) {
-            left: 6.5rem;
+            left: 6.6rem;
             transform: rotate(90deg);
             transform-origin: 0 0;       
         }
 
         &:nth-child(2){
-            right: 6.5rem;
+            right: 6.6rem;
             transform: rotate(-90deg);
             transform-origin: 100% 0; 
         }

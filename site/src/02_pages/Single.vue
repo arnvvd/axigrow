@@ -3,10 +3,22 @@
         <div class="container__inner container__inner--single"> 
     		<div class="content" v-if="getShapeById != undefined">
                 <div class="datas__wrapper">
-                    <div class="datas datas--01"><p class="data-number">245</p></div>
-                    <div class="datas datas--02"><p class="data-number">245</p></div>
-                    <div class="datas datas--03"><p class="data-number">245</p></div>
-                    <div class="datas datas--04"><p class="data-number">245</p></div>
+                    <div class="datas datas--01">
+                        <p class="data-number">{{getShapeById.followers}}</p>
+                        <p class="data-name">Followers</p>
+                    </div>
+                    <div class="datas datas--02">
+                        <p class="data-number">{{getShapeById.tweets}}</p>
+                        <p class="data-name">Tweets</p>
+                    </div>
+                    <div class="datas datas--03">
+                        <p class="data-number">{{getShapeById.likes}}</p>
+                        <p class="data-name">Likes</p>
+                    </div>
+                    <div class="datas datas--04">
+                        <p class="data-number">{{getShapeById.daysCount}}</p>
+                        <p class="data-name">Days subscribed</p>
+                    </div>
                 </div>
                 <!-- <h1>Shape ID : {{$route.params.id}}</h1>
                 <pre>{{getShapeById}}</pre> -->
