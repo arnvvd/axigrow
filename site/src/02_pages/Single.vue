@@ -2,14 +2,14 @@
     <section class="container">
         <div class="container__inner container__inner--single"> 
     		<div class="content" v-if="getShapeById != undefined">
-                <div>
+                <div class="datas__wrapper">
                     <div class="datas datas--01"><p class="data-number">245</p></div>
                     <div class="datas datas--02"><p class="data-number">245</p></div>
                     <div class="datas datas--03"><p class="data-number">245</p></div>
                     <div class="datas datas--04"><p class="data-number">245</p></div>
                 </div>
-                <h1>Shape ID : {{$route.params.id}}</h1>
-                <pre>{{getShapeById}}</pre>
+                <!-- <h1>Shape ID : {{$route.params.id}}</h1>
+                <pre>{{getShapeById}}</pre> -->
                 <shape-canvas :shapeObj="shapeObj" :isBackgroundBlack="isBackgroundBlack" :page="page"></shape-canvas>   
             </div>
 
