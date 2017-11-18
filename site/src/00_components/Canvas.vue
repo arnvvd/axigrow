@@ -23,6 +23,21 @@
         props: ['shapeObj', 'isBackgroundBlack', 'page'],
 
         methods: {
+
+            bindEvents() {
+                window.addEventListener( 'resize', this.onResize.bind(this) );
+            },
+
+            /**
+             * onResize
+             */
+            onResize() {
+                this.canvas.width = window.innerWidth * 0.8;
+                this.canvas.height = window.innerHeight * 0.8;
+                this.setCard();
+                this.render();
+            },
+
             /**
              * setCard
              */
@@ -73,8 +88,8 @@
             this.root.appendChild(this.canvas);
 
             // Size
-            this.canvas.width = 800;
-            this.canvas.height = 800;
+            this.canvas.width = window.innerWidth * 0.8;
+            this.canvas.height = window.innerHeight * 0.8;
 
 
             // Context
@@ -83,6 +98,7 @@
 
 
             // EXEC
+            this.bindEvents();
             this.setCard();
             this.render();
         },

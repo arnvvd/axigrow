@@ -28,7 +28,7 @@ const routes = [
             bodyClass: 'generator is-white',
             headerDatas: {
                 navigation: true,
-                home: true,
+                home: false,
                 grow: false
             } 
         }

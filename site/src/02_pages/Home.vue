@@ -24,8 +24,8 @@
 					<p class="font__logo">D</p>
 				</div>
 			</div>
-			<pre>{{getLastShape}}</pre>
-			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false" :page="page"></shape-canvas>
+<!-- 			<pre>{{getLastShape}}</pre>
+ -->			<shape-canvas :shapeObj="getLastShape" :isBackgroundBlack="false" :page="page"></shape-canvas>
 		</div>      
         </div>
     </section>
@@ -33,6 +33,7 @@
 
 <script>
 	import Canvas from '../00_components/Canvas.vue'
+	import router from '../core/router.js';
     import { mapGetters } from 'vuex'
 
     export default {

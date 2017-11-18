@@ -4,17 +4,17 @@
             <li class="nav__item">
                 <div class="nav__item__wrapper">
                     <div class="nav__item__subwrapper">
-                        <p class="nav__item__title">Generator</p>
+                        <router-link class="nav__item__title" to="/">Home</router-link>
                     </div>
                     <div class="nav__item__subwrapper">
-                        <router-link class="nav__item__title" to="/about">About</router-link>
+                        <p class="nav__item__title"></p>
                     </div>
                 </div>
             </li>
             <li class="nav__item">
                 <div class="nav__item__wrapper">
                     <div class="nav__item__subwrapper">
-                        <p class="nav__item__title">About</p>
+                        <p class="nav__item__title"></p>
                     </div>  
                     <div class="nav__item__subwrapper">
                         <router-link class="nav__item__title" to="/generator">Generator</router-link>

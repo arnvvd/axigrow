@@ -9,6 +9,7 @@
     opacity: 0;
     pointer-events: none;
 
+
     &__wrapper{
         display: block;
         width: 100vw;
@@ -38,6 +39,12 @@
             transform: translateY(-50%);
             opacity: 0;
             transition: transform .6s cubic-bezier(.4,0,0,1), opacity .6s cubic-bezier(.4,0,0,1);
+
+            .home &,
+            .generator & {
+                pointer-events: auto;
+                z-index: 10;
+            }
         }
 
         &__title {
