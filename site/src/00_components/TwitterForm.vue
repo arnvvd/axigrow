@@ -49,6 +49,11 @@
                         let nowDate = moment().toDate();
                         let daysCount = moment(nowDate).diff(createDate, 'days')
 
+                        console.log(tweetDate);
+                        console.log(createDate);
+                        console.log(nowDate);
+                        console.log(daysCount);
+
                         profile.id = twitterProfile.id;
                         profile.pseudonyme = twitterProfile.screen_name;
                         profile.name = twitterProfile.name;
