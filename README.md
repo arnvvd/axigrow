@@ -11,7 +11,7 @@ node cncserver --botType=axidraw --debug=true --httpLocalOnly=false
 ```
 
 ## Node server
-Launch the Nodeserver to command your Axidraw.
+Launch the Nodeserver to control your Axidraw.
 
 ```sh
 node nodeserver({Axidraw IP Adress})
